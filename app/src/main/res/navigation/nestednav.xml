@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestednav"
+    app:startDestination="@id/nested1Fragment">
+
+    <fragment
+        android:id="@+id/nested1Fragment"
+        android:name="com.example.fragmentnanigation.nested1Fragment"
+        android:label="fragment_nested1"
+        tools:layout="@layout/fragment_nested1" >
+        <action
+            android:id="@+id/action_nested1Fragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.fragmentnanigation.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_nested1Fragment"
+            app:destination="@id/nested1Fragment" />
+    </fragment>
+</navigation>
